@@ -1,6 +1,12 @@
 {
     "routes": [
-      { "src": "/sitemap.xml", "dest": "/sitemap.xml", "headers": { "Content-Type": "application/xml" } }
+      {
+        "src": "/sitemap.xml",
+        "dest": "/sitemap.xml",
+        "headers": {
+          "Content-Type": "application/xml"
+        }
+      }
     ]
   }
   
