@@ -151,7 +151,7 @@
     border-color: rgba(13, 110, 253, 0.1);
 }
 
-.about-details .row > div {
+.about-details .row>div {
     position: relative;
     z-index: 2;
 }
@@ -377,8 +377,13 @@
 }
 
 @keyframes shimmer {
-    0% { left: -100%; }
-    100% { left: 100%; }
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
 }
 
 /* Responsive Design */
@@ -387,21 +392,21 @@
         font-size: 2rem;
         margin-bottom: 1.25rem;
     }
-    
+
     .about-content .lead {
         font-size: 1rem;
         margin-bottom: 1.5rem;
     }
-    
+
     .about-details {
         padding: 1.25rem;
         margin-bottom: 1.5rem;
     }
-    
+
     .about-actions {
         margin-top: 1.5rem;
     }
-    
+
     .about-actions .btn {
         padding: 0.625rem 1.5rem;
         font-size: 0.9rem;
@@ -413,44 +418,44 @@
         margin-bottom: 2rem;
         border-radius: 16px;
     }
-    
+
     .about-content h3 {
         font-size: 1.8rem;
         text-align: center;
     }
-    
+
     .about-content .lead {
         font-size: 0.95rem;
         text-align: center;
     }
-    
+
     .about-details {
         padding: 1rem;
     }
-    
-    .about-details .row > div {
+
+    .about-details .row>div {
         margin-bottom: 0.5rem;
     }
-    
+
     .about-actions {
         justify-content: center;
         flex-wrap: wrap;
         gap: 0.75rem;
     }
-    
+
     .about-actions .btn {
         padding: 0.5rem 1.25rem;
         font-size: 0.85rem;
     }
-    
+
     .stat-item {
         padding: 1.25rem;
     }
-    
+
     .stat-number {
         font-size: 2rem;
     }
-    
+
     .stat-label {
         font-size: 0.8rem;
     }
@@ -460,25 +465,25 @@
     .about-content h3 {
         font-size: 1.6rem;
     }
-    
+
     .about-content .lead {
         font-size: 0.9rem;
     }
-    
+
     .about-details {
         padding: 0.875rem;
     }
-    
+
     .about-actions .btn {
         display: block;
         width: 100%;
         margin-bottom: 0.5rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .section-divider {
         width: 60px;
         height: 3px;
@@ -491,6 +496,7 @@
         opacity: 0;
         transform: translateX(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -502,6 +508,7 @@
         opacity: 0;
         transform: translateX(30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -856,19 +863,19 @@
     .project-card {
         margin-bottom: 1.5rem;
     }
-    
+
     .project-content {
         padding: 1.25rem;
     }
-    
+
     .project-title {
         font-size: 1.2rem;
     }
-    
+
     .project-description {
         font-size: 0.9rem;
     }
-    
+
     .filter-btn {
         padding: 0.5rem 1.2rem;
         font-size: 0.9rem;
@@ -880,36 +887,36 @@
     .project-image {
         height: 200px;
     }
-    
+
     .project-content {
         padding: 1rem;
     }
-    
+
     .project-title {
         font-size: 1.1rem;
         margin-bottom: 0.75rem;
     }
-    
+
     .project-description {
         font-size: 0.85rem;
         margin-bottom: 1rem;
     }
-    
+
     .tech-tag {
         font-size: 0.75rem;
         padding: 0.3rem 0.7rem;
     }
-    
+
     .filter-buttons {
         margin-bottom: 2rem;
     }
-    
+
     .filter-btn {
         padding: 0.45rem 1rem;
         font-size: 0.85rem;
         margin: 0.25rem;
     }
-    
+
     .project-overlay .btn {
         width: 40px;
         height: 40px;
@@ -921,24 +928,24 @@
     .project-image {
         height: 180px;
     }
-    
+
     .project-content {
         padding: 0.875rem;
     }
-    
+
     .project-title {
         font-size: 1rem;
     }
-    
+
     .project-description {
         font-size: 0.8rem;
     }
-    
+
     .tech-tag {
         font-size: 0.7rem;
         padding: 0.25rem 0.6rem;
     }
-    
+
     .filter-btn {
         display: block;
         width: 100%;
@@ -952,6 +959,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1324,8 +1332,13 @@
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Fade-in Animation */
@@ -1338,6 +1351,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1346,6 +1360,7 @@
 
 /* Responsive Design */
 @media (max-width: 991.98px) {
+
     .contact-info,
     .contact-form {
         padding: 1.5rem;
@@ -1381,6 +1396,7 @@
 }
 
 @media (max-width: 767.98px) {
+
     .contact-info,
     .contact-form {
         margin-bottom: 2rem;
@@ -1432,6 +1448,7 @@
 }
 
 @media (max-width: 575.98px) {
+
     .contact-info,
     .contact-form {
         padding: 1rem;
@@ -1508,5 +1525,3 @@
     transform: scale(1.2);
     opacity: 0.7;
 }
-
-

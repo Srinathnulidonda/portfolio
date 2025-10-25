@@ -1,6 +1,6 @@
 // Portfolio Website JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // Initialize AOS (Animate On Scroll)
     AOS.init({
         duration: 800,
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navbar scroll effect
     const navbar = document.getElementById('mainNav');
     const navbarBrand = document.querySelector('.navbar-brand');
-    
+
     function updateNavbar() {
         if (window.scrollY > 100) {
             navbar.classList.add('navbar-scrolled');
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (target) {
                 const navbarHeight = navbar.offsetHeight;
                 const targetPosition = target.offsetTop - navbarHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         new Typed('.typed-text', {
             strings: [
                 'Full Stack Development',
-                'Mobile App Development', 
+                'Mobile App Development',
                 'Machine Learning',
                 'Web Design',
                 'UI/UX Design',
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function filterProjects(category) {
         projectItems.forEach(item => {
             const itemCategories = item.classList;
-            
+
             if (category === 'all' || itemCategories.contains(category)) {
                 item.style.display = 'block';
                 item.classList.remove('hidden');
@@ -126,19 +126,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            
+
             // Add active class to clicked button
             this.classList.add('active');
-            
+
             // Get filter category
             const filterCategory = this.getAttribute('data-filter');
-            
+
             // Filter projects
             filterProjects(filterCategory);
-            
+
             // Add loading effect
             projectItems.forEach(item => {
                 item.classList.add('loading');
@@ -151,14 +151,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Project card hover effects
     const projectCards = document.querySelectorAll('.project-card');
-    
+
     projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-15px) scale(1.02)';
             this.style.zIndex = '10';
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
             this.style.zIndex = '1';
         });
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Back to top button
     const backToTopButton = document.querySelector('.back-to-top');
-    
+
     if (backToTopButton) {
         function toggleBackToTopButton() {
             if (window.scrollY > 300) {
@@ -183,8 +183,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         window.addEventListener('scroll', toggleBackToTopButton);
-        
-        backToTopButton.addEventListener('click', function(e) {
+
+        backToTopButton.addEventListener('click', function (e) {
             e.preventDefault();
             window.scrollTo({
                 top: 0,
@@ -196,31 +196,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact form handling (if exists)
     const contactForm = document.querySelector('#contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(this);
             const formObject = {};
             formData.forEach((value, key) => {
                 formObject[key] = value;
             });
-            
+
             // Show loading state
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.innerHTML;
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
             submitButton.disabled = true;
-            
+
             // Simulate form submission (replace with actual form handling)
             setTimeout(() => {
                 // Reset button
                 submitButton.innerHTML = originalText;
                 submitButton.disabled = false;
-                
+
                 // Show success message
                 showNotification('Message sent successfully!', 'success');
-                
+
                 // Reset form
                 this.reset();
             }, 2000);
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <button class="notification-close">&times;</button>
         `;
-        
+
         // Add styles
         notification.style.cssText = `
             position: fixed;
@@ -257,14 +257,14 @@ document.addEventListener('DOMContentLoaded', function() {
             align-items: center;
             justify-content: space-between;
         `;
-        
+
         document.body.appendChild(notification);
-        
+
         // Show notification
         setTimeout(() => {
             notification.style.transform = 'translateX(0)';
         }, 100);
-        
+
         // Hide notification after 5 seconds
         setTimeout(() => {
             notification.style.transform = 'translateX(100%)';
@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }, 300);
         }, 5000);
-        
+
         // Close button functionality
         const closeButton = notification.querySelector('.notification-close');
         closeButton.addEventListener('click', () => {
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Lazy loading for images
     const images = document.querySelectorAll('img[loading="lazy"]');
-    
+
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -301,13 +301,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-        
+
         images.forEach(img => imageObserver.observe(img));
     }
 
     // Skills animation (if skills section exists)
     const skillBars = document.querySelectorAll('.skill-progress');
-    
+
     if (skillBars.length > 0) {
         const skillsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }, { threshold: 0.5 });
-        
+
         skillBars.forEach(bar => skillsObserver.observe(bar));
     }
 
@@ -327,14 +327,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (themeToggle) {
         const currentTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', currentTheme);
-        
-        themeToggle.addEventListener('click', function() {
+
+        themeToggle.addEventListener('click', function () {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
+
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            
+
             // Update toggle icon
             const icon = this.querySelector('i');
             icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Counter animation for statistics (if exists)
     const counters = document.querySelectorAll('.counter');
-    
+
     if (counters.length > 0) {
         const counterObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const target = parseInt(counter.getAttribute('data-target'));
                     const increment = target / 200;
                     let current = 0;
-                    
+
                     const updateCounter = () => {
                         if (current < target) {
                             current += increment;
@@ -372,13 +372,13 @@ document.addEventListener('DOMContentLoaded', function() {
                             counter.textContent = target;
                         }
                     };
-                    
+
                     updateCounter();
                     counterObserver.unobserve(counter);
                 }
             });
         }, { threshold: 0.5 });
-        
+
         counters.forEach(counter => counterObserver.observe(counter));
     }
 
@@ -396,14 +396,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu enhancements
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
-    
+
     if (navbarToggler && navbarCollapse) {
-        navbarToggler.addEventListener('click', function() {
+        navbarToggler.addEventListener('click', function () {
             this.classList.toggle('active');
         });
-        
+
         // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const isClickInsideNav = navbar.contains(event.target);
             if (!isClickInsideNav && navbarCollapse.classList.contains('show')) {
                 navbarToggler.click();
@@ -433,56 +433,56 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-        
+
         perfObserver.observe({ entryTypes: ['navigation'] });
     }
 
     // Console message
-    console.log('%c👨‍💻 Welcome to Srinath Nulidonda\'s Portfolio!', 
+    console.log('%c👨‍💻 Welcome to Srinath Nulidonda\'s Portfolio!',
         'color: #007bff; font-size: 16px; font-weight: bold;');
-    console.log('%cInterested in the code? Check out my GitHub: https://github.com/Srinathnulidonda', 
+    console.log('%cInterested in the code? Check out my GitHub: https://github.com/Srinathnulidonda',
         'color: #28a745; font-size: 12px;');
 });
 
 // Global utility functions
 window.portfolioUtils = {
     // Smooth scroll to element
-    scrollTo: function(elementId) {
+    scrollTo: function (elementId) {
         const element = document.getElementById(elementId);
         if (element) {
             const navbarHeight = document.getElementById('mainNav').offsetHeight;
             const targetPosition = element.offsetTop - navbarHeight;
-            
+
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
             });
         }
     },
-    
+
     // Copy text to clipboard
-    copyToClipboard: function(text) {
+    copyToClipboard: function (text) {
         navigator.clipboard.writeText(text).then(() => {
             this.showNotification('Copied to clipboard!', 'success');
         });
     },
-    
+
     // Show notification
-    showNotification: function(message, type = 'info') {
+    showNotification: function (message, type = 'info') {
         // Implementation already included above
     },
-    
+
     // Format date
-    formatDate: function(date) {
+    formatDate: function (date) {
         return new Intl.DateTimeFormat('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
         }).format(new Date(date));
     },
-    
+
     // Debounce function
-    debounce: function(func, wait) {
+    debounce: function (func, wait) {
         let timeout;
         return function executedFunction(...args) {
             const later = () => {
@@ -493,11 +493,11 @@ window.portfolioUtils = {
             timeout = setTimeout(later, wait);
         };
     },
-    
+
     // Throttle function
-    throttle: function(func, limit) {
+    throttle: function (func, limit) {
         let inThrottle;
-        return function() {
+        return function () {
             const args = arguments;
             const context = this;
             if (!inThrottle) {
@@ -510,12 +510,12 @@ window.portfolioUtils = {
 };
 
 // Error handling
-window.addEventListener('error', function(e) {
+window.addEventListener('error', function (e) {
     console.error('JavaScript Error:', e.error);
 });
 
 // Handle unhandled promise rejections
-window.addEventListener('unhandledrejection', function(e) {
+window.addEventListener('unhandledrejection', function (e) {
     console.error('Unhandled Promise Rejection:', e.reason);
 });
 
